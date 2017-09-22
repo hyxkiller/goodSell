@@ -73,6 +73,18 @@ body {
   float: left;
 }
 
+.top .topcenter .topleft #no-login {
+  width: 150px;
+  height: 32px;
+  float: left;
+}
+
+.top .topcenter .topleft #yes-login {
+  width: 150px;
+  height: 32px;
+  float: left;
+}
+
 .top .topcenter .topleft li {
   float: left;
   line-height: 32px;
@@ -86,6 +98,7 @@ body {
 }
 
 .top .topcenter .topleft .dimension {
+  float: left;
   position: relative;
 }
 
@@ -185,13 +198,13 @@ body {
   float: left;
   width: 202px;
   height: 70px;
-  margin-top: 25px;
+  margin-top: 45px;
 }
 
 .search-bar .bar-center .search {
   float: left;
   width: 578px;
-  margin: 25px 90px 0 100px;
+  margin: 45px 90px 0 100px;
 }
 
 .search-bar .bar-center .search .searchbox {
@@ -294,11 +307,12 @@ body {
 
 .search-bar .bar-center .erweima span {
   display: inline-block;
+  color: #666;
 }
 
 .search-bar .bar-center .erweima img {
   position: relative;
-  top: 2px;
+  top: 4px;
 }
 
 .nav-bar {
@@ -336,7 +350,7 @@ body {
   position: absolute;
   top: 12px;
   left: 70px;
-  font-size: 14px;
+  font-size: 16px;
   color: #78a000;
 }
 
@@ -346,6 +360,7 @@ body {
   top: 40px;
   left: 0;
   z-index: 999;
+  display: none;
 }
 
 .nav-bar .nav-center .categorys .category .item {
@@ -907,4 +922,380 @@ body {
 
 .register-content .content-middle .content-bg {
   margin: 50px 0 0 57px;
+}
+
+.register-content .content-middle .content-list {
+  background-color: #fff;
+  padding: 37px 50px 47px;
+  margin: 0 30px 26px 0;
+  border: 1px solid #e6e6e6;
+  position: relative;
+  width: 300px;
+}
+
+.register-content .content-middle .content-list label {
+  position: absolute;
+  z-index: 3;
+  width: 38px;
+  height: 24px;
+  line-height: 24px;
+  border-right: 1px solid #f2f2f2;
+  margin: 5px;
+}
+
+.register-content .content-middle .content-list input {
+  padding-left: 48px;
+  width: 248px;
+  height: 32px;
+  line-height: 32px;
+  border: 1px solid #f2f2f2;
+  text-indent: 1em;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.register-content .content-middle .content-list .ml5 {
+  margin-left: 5px;
+}
+
+.register-content .content-middle .content-list .content-tip {
+  margin: 2px 0 0 22px;
+  vertical-align: middle;
+  color: #ff9911;
+  font-size: 14px;
+  display: none;
+}
+
+.register-content .content-middle .content-list .content-phone {
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.register-content .content-middle .content-list .content-phone .label-phone {
+  background: url("../images/register/phone.png") no-repeat 10px 0;
+}
+
+.register-content .content-middle .content-list .content-pwd {
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.register-content .content-middle .content-list .content-pwd .label-pwd {
+  background: url("../images/register/pwd.png") no-repeat 8px 0;
+}
+
+.register-content .content-middle .content-list .content-code {
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.register-content .content-middle .content-list .content-code .label-code {
+  background: url("../images/register/code-1.png") no-repeat 7px 2px;
+}
+
+.register-content .content-middle .content-list .content-code .code-ipt {
+  width: 125px;
+}
+
+.register-content .content-middle .content-list .content-code .auto-code {
+  position: absolute;
+  margin: 0 0 0 3px;
+  width: 58px;
+  height: 32px;
+  line-height: 32px;
+  border: 1px solid #f2f2f2;
+  font-size: 14px;
+  color: #808080;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.register-content .content-middle .content-list .content-code .next-code {
+  width: 38px;
+  height: 34px;
+  color: #ccc;
+  font-size: 12px;
+  display: inline-block;
+}
+
+.register-content .content-middle .content-list .content-phonecode {
+  height: 67px;
+  margin-bottom: 10px;
+}
+
+.register-content .content-middle .content-list .content-phonecode .label-phonecode {
+  background: url("../images/register/code-2.png") no-repeat 6px 4px;
+}
+
+.register-content .content-middle .content-list .content-phonecode .phonecode-ipt {
+  width: 168px;
+}
+
+.register-content .content-middle .content-list .content-phonecode .gain {
+  margin-left: 10px;
+  width: 70px;
+  height: 34px;
+  line-height: 34px;
+  background-color: #90be30;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 12px;
+  display: inline-block;
+}
+
+.register-content .content-middle .content-list .content-item {
+  margin-bottom: 39px;
+  text-align: center;
+  line-height: 16px;
+  height: 16px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.register-content .content-middle .content-list .content-item .cklabel {
+  width: 100%;
+  height: 15px;
+  text-align: center;
+  padding-left: 10px;
+}
+
+.register-content .content-middle .content-list .content-item .cklabel .gouxuan {
+  display: inline-block;
+  width: 13px;
+  height: 14px;
+  border: none;
+  vertical-align: middle;
+}
+
+.register-content .content-middle .content-list .content-item .cklabel .c-green {
+  cursor: pointer;
+  color: #90be30;
+}
+
+.register-content .content-middle .content-list .free-register {
+  width: 290px;
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+  background-color: #90be30;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.register-content .content-middle .content-list .free-register .regist {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  font-size: 18px;
+  background: #90be30;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.register-content .content-middle .content-text {
+  width: 1080px;
+  text-align: right;
+  margin: 26px 45px 63px 0;
+  color: #90be30;
+}
+
+#foot {
+  width: 100%;
+  padding: 0;
+  zoom: 1;
+  margin-top: 30px;
+}
+
+#foot .foots {
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+#foot .foots a {
+  margin: 0 10px;
+}
+
+#foot .foots .mtb10 {
+  margin: 10px 0;
+}
+
+#foot .authentication2 {
+  width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+#foot .authentication2 a {
+  margin: 0 5px;
+}
+
+#foot .authentication2 a img {
+  vertical-align: middle;
+  border: 0;
+  width: 103px;
+  height: 32px;
+}
+
+.login-box {
+  width: 100%;
+  height: 74px;
+}
+
+.login-box .login-top {
+  width: 990px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.login-box .login-top .login-logo {
+  padding-top: 23px;
+}
+
+.login-box .login-top .login-logo img {
+  width: 148px;
+  height: 51px;
+}
+
+.login-box .login-top .login-logo h2 {
+  height: 32px;
+  width: 147px;
+  margin: 12px 0 0 26px;
+  color: #999;
+  font: 24px/28px "microsoft yahei";
+}
+
+.login-center {
+  background: #fece00;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.login-center .login-bg {
+  width: 1200px;
+  height: 575px;
+  margin: 0 auto;
+  background: url("../images/login/loginbg.jpg");
+  overflow: hidden;
+  position: relative;
+}
+
+.login-center .login-bg .login-list {
+  margin-top: 50px;
+  width: 400px;
+  height: 430px;
+  border: 1px solid #f2e0de;
+  background: #fff;
+  box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+}
+
+.login-center .login-bg .login-list .tab-link {
+  height: 75px;
+  border-bottom: 1px solid #c3c3c3;
+}
+
+.login-center .login-bg .login-list .tab-link span {
+  margin: 40px 30px 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+.login-center .login-bg .login-list #msg-error {
+  font-size: 14px;
+  color: #e5383c;
+  height: 27px;
+  line-height: 25px;
+  width: 316px;
+  padding: 2px 0 2px 3px;
+  z-index: 100;
+  margin: 10px 0 -5px 40px;
+  border: 1px dashed #fff;
+}
+
+.login-center .login-bg .login-list .form {
+  position: relative;
+  top: 20px;
+  overflow: hidden;
+}
+
+.login-center .login-bg .login-list .form .fore1 {
+  z-index: 10;
+  margin-bottom: 20px;
+}
+
+.login-center .login-bg .login-list .form .fore1 .item-info {
+  position: relative;
+  width: 307px;
+}
+
+.login-center .login-bg .login-list .form .fore1 .item-info .phone-text {
+  position: relative;
+  float: none;
+  width: 279px;
+  height: 36px;
+  line-height: 36px;
+  padding: 4px 0 4px 37px;
+  border: 1px solid #b8c1c8;
+  font-size: 14px;
+  font-family: arial, SimSun;
+  color: #4a4a4f;
+}
+
+.login-center .login-bg .login-list .form .fore1 .item-info .ico {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  left: 15px;
+  top: 15px;
+  z-index: 5;
+  background: url("../images/login/login-inp-bg.png") no-repeat #ffffff;
+}
+
+.login-center .login-bg .login-list .form .fore1 .item-info .iname1 {
+  background-position: 0 0;
+}
+
+.login-center .login-bg .login-list .form .fore1 .item-info .iname2 {
+  background-position: 0 -22px;
+}
+
+.login-center .login-bg .login-list .form .fore2 {
+  height: 37px;
+  margin-top: 1px;
+  z-index: 3;
+  color: #98999a;
+}
+
+.login-center .login-bg .login-list .form .fore2 .mar input {
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.login-center .login-bg .login-list .form .fore2 p {
+  display: inline-block;
+  color: #98999a;
+}
+
+.login-center .login-bg .login-list .form .login-btn {
+  height: 47px;
+}
+
+.login-center .login-bg .login-list .form .login-btn input {
+  background-color: #91be16;
+  border: medium none;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Microsoft YaHei";
+  font-size: 20px;
+  height: 46px;
+  line-height: 43px;
+  overflow: hidden;
+  width: 321px;
+  letter-spacing: 5px;
 }

@@ -1,8 +1,14 @@
 <div class="top">
     <div class="topcenter">
         <ul class="topleft">
-            <li><a href="login.html" class="user">您好，请登录</a></li>
-            <li><a href="regist.html" class="regist">免费注册</a></li>
+            <div id="no-login">
+                <li><a href="login.html" class="user">您好，请登录</a></li>
+                <li><a href="regist.html" class="regist">免费注册</a></li>
+            </div>
+            <div id="yes-login" style="display:none">
+                <li><a id="name" class="user" href="cart.html"></a></li>
+                <li><a id="out" class="regist" style="cursor:pointer">[退出]</a></li>
+            </div>
             <li class="dimension">
                 <a href="javascipt:void" class="erwei">手机好买网</a>
                 <div></div>
@@ -50,7 +56,7 @@
     <div class="bar-center">
         <div class="logo">
            <h1>
-            <a href="javascipt:void">
+            <a href="index.html">
                 <img src="../images/logo_haimai.jpg" alt="">
             </a>
            </h1>
@@ -90,7 +96,7 @@
         <div class="categorys">
             <div class="cate-all">
                 <img src="../images/juxing.png" />
-                <a href="javascipt:void">全部商品分类</a>
+                <a href="javascipt:void(0)">全部商品分类</a>
             </div>
             <div class="category">
                 <div class="item">

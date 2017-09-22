@@ -1,0 +1,87 @@
+.hot-content img {
+  width: 100%;
+}
+
+.content {
+  background: #E9F7DB;
+}
+
+.content .lists {
+  width: 1190px;
+  margin: 0 auto;
+}
+
+.content .lists > div {
+  width: 1100px;
+  margin: 0 auto;
+  padding: 15px 0 30px 10px;
+}
+
+.content .lists .floor1 h3 {
+  border-left: none;
+  text-align: center;
+  height: 46px;
+  line-height: 46px;
+  background: url("../images/goodslist/floor-1.png") no-repeat 313px;
+  color: #3f7807;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.content .lists .floor1 ul li {
+  margin: 32px 10px 0 0;
+  margin-top: 32px;
+  float: left;
+  width: 210px;
+  height: 314px;
+  background-color: #fff;
+  position: relative;
+}
+
+.content .lists .floor1 ul li .p-img {
+  text-align: center;
+  width: 210px;
+  height: 200px;
+  padding: 0;
+}
+
+.content .lists .floor1 ul li .p-img img {
+  width: 180px;
+  height: 180px;
+  margin-top: 10px;
+}
+
+.content .lists .floor1 ul li .p-name {
+  width: 190px;
+  height: 34px;
+  overflow: hidden;
+  margin: 0 10px;
+}
+
+.content .lists .floor1 ul li .p-price {
+  font-weight: bold;
+  margin-top: 14px;
+  width: 100%;
+  margin-left: 0;
+  text-align: center;
+  color: #df4545;
+}
+
+.content .lists .floor1 ul li .p-price span {
+  font-size: 16px;
+}
+
+.content .lists .floor1 ul li .btn-buy {
+  position: absolute;
+  bottom: 10px;
+  right: 67px;
+  display: block;
+  width: 80px;
+  height: 26px;
+  line-height: 26px;
+  text-align: center;
+  background-color: #f66;
+  border-radius: 1px;
+  color: #fff;
+}

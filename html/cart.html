@@ -1,9 +1,126 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-	</head>
-	<body>
-	</body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>购物车</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/cart.css">
+</head>
+<body>
+    <div id="top"></div>
+    <div class="center clear">
+        <div class="clogo fl">
+            <h1>
+                <a href="index.html">
+                    <img src="../images/logo_haimai.jpg" alt="">
+                </a>
+            </h1>
+        </div>
+        <ul class="ctext fr">
+            <li class="step1">1.我的购物车</li>
+            <li class="step2">2.填写核对订单信息</li>
+            <li class="step3">3.成功提交订单</li>            
+        </ul>
+    </div>
+    <div class="center">
+        <div class="cart-h">
+            <h2>我的购物车</h2>
+        </div>
+        <div class="show">
+            <div class="message" style="display:none">
+                <p>购物车内暂时没有商品，登录后，将显示您之前加入的商品去首页挑选喜欢的商品</p>
+            </div>
+            <div class="cart-list">
+                <div class="cart-head">
+                    <ul class="clear">
+                        <li class="he1">
+                            <input type="checkbox" name="" class="inp">
+                            <label for="all">全选</label>
+                        </li>
+                        <li class="he2">商品</li>
+                        <li class="he3">商城价</li>
+                        <li class="he4">数量</li>
+                        <li class="he5">操作</li>
+                    </ul>
+                </div>
+                <div class="cart-items">
+                    <div class="cart-item">
+                        <ul class="clear">
+                            <li class="it1">
+                                <input type="checkbox" name="" class="inp">
+                            </li>
+                            <li class="it2 clear">
+                                <div class="goodsimg fl">
+                                    <a href="javascipt:void(0)">
+                                        <img src="" alt="">
+                                    </a>
+                                </div>
+                                <div class="goodscon fl">
+                                    <a href="javascript:void(0)">
+                                        <p class="p1"></p>
+                                        <p class="p2"></p>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="it3">¥
+                                <span class="price"></span>  
+                            </li>
+                            <li class="it4">
+                                <a href="javascipt:void(0)" class="reduce">-</a>
+                                <a href="javascipt:void(0)" class="add">+</a>                            
+                                <input type="text" value="" class="number">
+                            </li>
+                            <div class="it5 del">删除</div>
+                        </ul>
+                    </div>
+                    <!-- <div class="cart-item">
+                        <ul class="clear">
+                            <li class="it1">
+                                <input type="checkbox" name="" class="inp">
+                            </li>
+                            <li class="it2 clear">
+                                <div class="goodsimg fl">
+                                    <a href="javascipt:void(0)">
+                                        <img src="../images/details/con1.jpg" alt="">
+                                    </a>
+                                </div>
+                                <div class="goodscon fl">
+                                    <a href="javascript:void(0)">
+                                        <p class="p1">（爆品池）帽子男夏天棒球帽韩版嘻哈帽青年百搭时尚春天休闲太阳户外遮阳帽</p>
+                                        <p class="p2">[颜色:BULLS灰色]</p>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="it3">¥
+                                <span class="price">19.99</span>  
+                            </li>
+                            <li class="it4">
+                                <a href="javascipt:void(0)" class="reduce">-</a>
+                                <a href="javascipt:void(0)" class="add">+</a>                            
+                                <input type="text" value="1" class="number">
+                            </li>
+                            <div class="it5 del">删除</div>
+                        </ul>
+                    </div> -->
+                </div>
+                
+                <div class="cart-buy">
+                    <div class="buy-right">
+                        <div class="buy-con fl">
+                            总计（不含运费）：¥
+                            <span class="buyspan"></span>
+                        </div>
+                        <div class="buy-btn fl">
+                            <a href="javascipt:void(0)">去结算</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script data-main="../js/my-pluin/cart.js" src="../js/require.js"></script>
+
 </html>

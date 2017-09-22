@@ -1,9 +1,11 @@
 var gulp = require("gulp");
 var uglify = require("gulp-uglify");
-var babel = require("gulp-babel")
-var rename = require("gulp-rename")
-var sass = require("gulp-sass")
+var babel = require("gulp-babel");
+var rename = require("gulp-rename");
+var sass = require("gulp-sass");
 var connect = require("gulp-connect");
+var webserver = require("gulp-webserver");
+var proxy = require("http-proxy-middleware");
 
 gulp.task("commen",function(){
     gulp.src("./js/*.js")
@@ -16,10 +18,9 @@ gulp.task("commen",function(){
 })
 
 gulp.task("compilecss",function(){
-    gulp.src('./scss/*.scss')
-    .pipe(sass({
+    sass("./scss/*.scss",{
         outputStyle : "expanded"
-    }))
+    })
     .pipe(gulp.dest("./css/"))
 })
 
@@ -27,6 +28,21 @@ gulp.task("refreshHTML",function(){
     gulp.src("./html/*.html")
         .pipe(connect.reload())
 })
+
+// gulp.task("webserver",function(){
+//     gulp.src('./')
+//         .pipe(
+//             webserver({
+//                 host : 'localhost',
+//                 port : 8000,
+//                 livereload : true,
+//                 directoryListing : {
+//                     enabel : true,
+//                     path : './'
+//                 }
+//             })
+//         )
+// })
 
 gulp.task("listen",function(){
     connect.server({
@@ -37,3 +53,6 @@ gulp.task("listen",function(){
     gulp.watch("./css/*.css",["refreshHTML"])
 })
 
+// gulp.task('default',["listen","webserver"],function(){
+    
+// })

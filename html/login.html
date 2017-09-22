@@ -2,8 +2,81 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>登录</title>
+		<link rel="stylesheet" href="../css/common.css">
 	</head>
 	<body>
+		<div class="login-box">
+			<div class="login-top">
+				<div class="login-logo">
+					<h1 class="fl">
+						<a href="index.html">
+							<img src="../images/register-logo.png" alt="">
+						</a>
+					</h1>
+					<h2 class="fl">会员登录</h2>
+				</div>
+			</div>
+		</div>
+		<div class="login-center">
+			<div class="login-bg">
+				<div class="login-list fr">
+					<div class="tab-link">
+						<span class="fl">贵农会员</span>
+						<span class="fr"><a href="regist.html">新用户注册</a></span>						
+					</div>
+					<div id="msg-error"></div>
+					<div class="form">
+						<div style="padding:0 42px">
+							<div class="fore1">
+								<div class="item-info">
+									<input type="text" class="phone-text" id="phone" placeholder="手机号/用户名">
+									<div class="ico iname1"></div>
+								</div>
+							</div>
+							<div class="fore1">
+								<div class="item-info">
+									<input type="password" class="phone-text" id="pwd" placeholder="密码">
+									<div class="ico iname2"></div>
+								</div>
+							</div>
+							<div class="fore2">
+								<div class="item-info">
+									<label class="mar">
+										<input type="checkbox" id="autologin" >自动登录
+									</label>
+									<p class="fr">忘记密码</p>
+								</div>
+							</div>
+							<div class="login-btn">
+								<input type="button" value="登录" id="loginbtn">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="foot">
+			<div class="foots">
+				<a href="javascipt:void">关于我们</a>|
+				<a href="javascipt:void">联系我们</a>	
+				<div class="mtb10">
+					<p>Copyright2015 黔ICP备12003464号 - 2</p>
+					<p>© 版权所有 © 2015 贵农网 保留所有权利　技术支持：贵州贵农网络科技有限公司-研发中心</p>	
+				</div>		
+			</div>
+			<div class="authentication2">
+				<a  href='https://credit.szfw.org/CX20160315018078080410.html' target='_blank'>
+					<img src="../images/footicon1.png" />
+				</a>
+				<a href="http://www.anquan.org/authenticate/cert/?site=www.coopbuy.com&at=business" target="_blank">
+					<img src="../images/footicon2.png" />
+				</a>
+				<a href="http://webscan.360.cn/index/checkwebsite/url/www.coopbuy.com" target="_blank">
+					<img src="../images/footicon3.png"  />
+				</a>
+			</div>
+		</div>
+		<script data-main="../js/my-pluin/login.js" src="../js/require.js"></script>
 	</body>
 </html>

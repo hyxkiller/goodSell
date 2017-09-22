@@ -26,6 +26,16 @@ $w : 32px;
             height: $w;
             margin: 0;
             float: left;
+            #no-login{
+                width: 150px;
+                height: 32px;
+                float: left;
+            }
+            #yes-login{
+                width: 150px;
+                height: 32px;
+                float: left;
+            }                
             li{
                 float: left;
                 line-height: $w;
@@ -37,6 +47,7 @@ $w : 32px;
                 }
             }
             .dimension{
+                float: left;
                 position: relative;
                 >div{
                     width: 80px;
@@ -121,12 +132,12 @@ $w : 32px;
             float: left;
             width: 202px;
             height: 70px;
-            margin-top: 25px;
+            margin-top: 45px;
         }
         .search{
             float: left;
             width: 578px;
-            margin: 25px 90px 0 100px;
+            margin: 45px 90px 0 100px;
             .searchbox{
                 width: 578px;
                 height: 40px;
@@ -215,10 +226,11 @@ $w : 32px;
             }
             span{
                 display: inline-block;
+                color: #666;
             }
             img{
                 position: relative;
-                top:2px;
+                top:4px;
             }
         }
     }
@@ -249,7 +261,7 @@ $w : 32px;
                     position: absolute;
                     top: 12px;
                     left: 70px;
-                    font-size: 14px;
+                    font-size: 16px;
                     color: #78a000;
                 }
             }
@@ -259,6 +271,7 @@ $w : 32px;
                 top:40px;
                 left: 0;
                 z-index: 999;
+                display: none;
                 .item{
                     width: 202px;
                     height: 40px;
@@ -699,7 +712,7 @@ $w : 32px;
         }
     }
 }
-
+//注册
 .register-head{
     width: 1200px;
     margin: 0 auto;
@@ -742,6 +755,334 @@ $w : 32px;
         border-bottom: 1px solid #ccc;
         .content-bg{
             margin: 50px 0 0 57px;
+        }
+        .content-list{
+            background-color: #fff;
+            padding: 37px 50px 47px;
+            margin: 0 30px 26px 0;
+            border: 1px solid #e6e6e6;
+            position: relative;
+            width: 300px;
+            label{
+                position: absolute;
+                z-index: 3;
+                width: 38px;
+                height: 24px;
+                line-height: 24px;
+                border-right: 1px solid #f2f2f2;
+                margin: 5px;
+            }
+            input{
+                padding-left: 48px;
+                width: 248px;
+                height: 32px;
+                line-height: 32px;
+                border: 1px solid #f2f2f2;
+                text-indent: 1em;
+                font-size: 14px;
+                color: #ccc;
+            }
+            .ml5{
+                margin-left: 5px;
+            }
+            .content-tip{
+                margin: 2px 0 0 22px;
+                vertical-align: middle;
+                color: #ff9911;
+                font-size: 14px;
+                display: none;
+            }
+            .content-phone{
+                height: 50px;
+                margin-bottom: 10px;
+                .label-phone{
+                    background: url("../images/register/phone.png") no-repeat 10px 0;
+                }
+            }
+            .content-pwd{
+                height: 50px;
+                margin-bottom: 10px;
+                .label-pwd{
+                    background: url("../images/register/pwd.png") no-repeat 8px 0;                    
+                }
+            }
+            .content-code{
+                height: 50px;
+                margin-bottom: 10px;
+                .label-code{
+                    background: url("../images/register/code-1.png") no-repeat 7px 2px;                                        
+                }
+                .code-ipt{
+                    width: 125px;
+                }
+                .auto-code{
+                    position: absolute;
+                    margin: 0 0 0 3px;
+                    width: 58px;
+                    height: 32px;
+                    line-height: 32px;
+                    border: 1px solid #f2f2f2;
+                    font-size: 14px;
+                    color: #808080;
+                    text-align: center;
+                    vertical-align: middle;
+                }
+                .next-code{
+                    width: 38px;
+                    height: 34px;
+                    color: #ccc;
+                    font-size: 12px;
+                    display: inline-block;
+                }
+               
+            }
+            .content-phonecode{
+                height: 67px;
+                margin-bottom: 10px;
+                .label-phonecode{
+                    background: url("../images/register/code-2.png") no-repeat 6px 4px;
+                }
+                .phonecode-ipt{
+                    width: 168px;
+                }
+                .gain{
+                    margin-left: 10px;
+                    width: 70px;
+                    height: 34px;
+                    line-height: 34px;
+                    background-color: #90be30;
+                    color: #fff;
+                    text-align: center;
+                    border-radius: 5px;
+                    font-size: 12px;
+                    display: inline-block;
+                }
+            }
+            .content-item{
+                margin-bottom: 39px;
+                text-align: center;
+                line-height: 16px;
+                height: 16px;
+                font-size: 14px;
+                cursor: pointer;
+                .cklabel{
+                    width: 100%;
+                    height: 15px;
+                    text-align: center;
+                    padding-left: 10px;
+                    .gouxuan{
+                        display: inline-block;
+                        width: 13px;
+                        height: 14px;
+                        border: none;
+                        vertical-align: middle;
+                    }
+                    .c-green{
+                        cursor: pointer;
+                        color: #90be30;
+                    }
+                }
+            }
+            .free-register{
+                width: 290px;
+                height: 40px;
+                line-height: 40px;
+                color: #fff;
+                background-color: #90be30;
+                margin: 0 auto;
+                text-align: center;
+                border-radius: 5px;
+                font-size: 18px;
+                .regist{
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    color: #fff;
+                    font-size: 18px;
+                    background: #90be30;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+            }
+        }
+        .content-text{
+            width: 1080px;
+            text-align: right;
+            margin: 26px 45px 63px 0;
+            color: #90be30;
+        }
+    }
+}
+
+//登录注册底部
+#foot{
+    width: 100%;
+    padding: 0;
+    zoom: 1;
+    margin-top: 30px;
+    .foots{
+        padding-bottom: 30px;
+        text-align: center;
+        a{
+            margin: 0 10px;
+        }
+        .mtb10{
+            margin: 10px 0;
+        }
+    }
+    .authentication2{
+        width: 900px;
+        margin: 0 auto;
+        text-align: center;
+        padding-bottom: 20px;
+        a{
+            margin: 0 5px;
+            img{
+                vertical-align: middle;
+                border: 0;
+                width: 103px;
+                height: 32px;
+            }
+        }
+    }
+}
+
+//登录
+.login-box{
+    width: 100%;
+    height: 74px;
+    .login-top{
+        width: 990px;
+        height: 100%;
+        margin: 0 auto;
+        .login-logo{
+            padding-top: 23px;
+            img{
+                width: 148px;
+                height: 51px;
+            }
+            h2{
+                height: 32px;
+                width: 147px;
+                margin: 12px 0 0 26px;
+                color: #999;
+                font: 24px/28px "microsoft yahei";
+            }
+        }
+    }
+}
+.login-center{
+    background: #fece00;
+    width: 100%;
+    margin-top: 20px;
+    .login-bg{
+        width: 1200px;
+        height: 575px;
+        margin: 0 auto;
+        background: url("../images/login/loginbg.jpg");
+        overflow: hidden;
+        position: relative;
+        .login-list{
+            margin-top: 50px;
+            width: 400px;
+            height: 430px;
+            border: 1px solid #f2e0de;
+            background: #fff;
+            box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.1);
+            border-radius: 2px;
+            .tab-link{
+                height: 75px;
+                border-bottom: 1px solid #c3c3c3;
+                span{
+                    margin: 40px 30px 10px;
+                    font-size: 16px;
+                    color: #333;
+                }
+            }
+            #msg-error{
+                font-size: 14px;
+                color: #e5383c;
+                height: 27px;
+                line-height: 25px;
+                width: 316px;
+                padding: 2px 0 2px 3px;
+                z-index: 100;
+                margin: 10px 0 -5px 40px;
+                border: 1px dashed #fff;
+            }
+            .form{
+                position: relative;
+                top: 20px;
+                overflow: hidden;
+                .fore1{
+                    z-index: 10;
+                    margin-bottom: 20px;
+                    .item-info{
+                        position: relative;
+                        width: 307px;
+                        .phone-text{
+                            position: relative;
+                            float: none;
+                            width: 279px;
+                            height: 36px;
+                            line-height: 36px;
+                            padding: 4px 0 4px 37px;
+                            border: 1px solid #b8c1c8;
+                            font-size: 14px;
+                            font-family: arial, SimSun;
+                            color: #4a4a4f;
+                        }
+                        .ico{
+                            width: 16px;
+                            height: 16px;
+                            position: absolute;
+                            left: 15px;
+                            top: 15px;
+                            z-index: 5;
+                            background: url("../images/login/login-inp-bg.png") no-repeat #ffffff;
+                        }
+                        .iname1{
+                            background-position: 0 0;                            
+                        }
+                        .iname2{
+                            background-position: 0 -22px;                                                        
+                        }
+                    }
+                }
+                .fore2{
+                    height: 37px;
+                    margin-top: 1px;
+                    z-index: 3;
+                    color: #98999a;
+                    .mar{
+                        input{
+                            vertical-align: middle;
+                            margin-right: 10px;
+                        }
+                    }
+                    p{
+                        display: inline-block;
+                        color: #98999a;
+                    }
+                }
+                .login-btn{
+                    height:47px;
+                    input{
+                        background-color: #91be16;
+                        border: medium none;
+                        border-radius: 3px;
+                        color: #fff;
+                        cursor: pointer;
+                        font-family: "Microsoft YaHei";
+                        font-size: 20px;
+                        height: 46px;
+                        line-height: 43px;
+                        overflow: hidden;
+                        width: 321px;
+                        letter-spacing: 5px;
+                    }
+                }
+            }
         }
     }
 }

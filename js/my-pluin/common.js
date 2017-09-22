@@ -1,10 +1,26 @@
 define(["jquery"], function($) {
     return function(){
+        close();
+        select();
+        item();
+        rightside();
+        login();
+        storage();
+
+        function storage(){
+            for(var i=0;i<localStorage.length;i++){
+                var key = localStorage.key(i)
+                var content =  JSON.parse(localStorage.getItem(key));
+                $(".side-cart em").text(content.count);
+            }
+        }
+        function close(){ //二维码关闭
             var $close = $(".close");
             $close.on("click",function(){
                 $(this).parent().hide(1000);
             })
-            
+        }
+        function select(){  //商品店铺选框
             var $select = $(".select");
             var $UL = $(".searchbox ul");
             $select.on("click",function(e){ 
@@ -17,6 +33,8 @@ define(["jquery"], function($) {
             $("body").on("click",function(){
                 $UL.hide();
             })
+        }
+        function item(){  //全部商品分类列表
             var $item = $(".item");
             $item.on("mouseenter",function(){
                 $(this).addClass("hover");
@@ -28,7 +46,9 @@ define(["jquery"], function($) {
                 $(this).find("h3").css({color:"#fff"});
                 $(this).find(".category-details").css({"display":"none"});
             })
-
+        }
+            
+        function rightside(){ //右侧导航栏
             var $rightli = $(".right-menu li"),$rightlast = $(".right-menu li:last");
             var $righttop = $(".menu-top li:not(:last)"),$rightmenu = $(".right-menu"),$rightcon = $(".right-content");
             $rightli.on("mouseenter",function(){
@@ -63,11 +83,24 @@ define(["jquery"], function($) {
                 var n = $(this).index();
                 $rightdiv.eq(n).show().siblings().hide(); 
             })
-
-            var oIpt = document.getElementById("searchipt");
-            oIpt.addEventListener("keyup",function(){
-
-            })
+        }
+        
+        function login(){  //登录
+            var username = localStorage.getItem("name") ? localStorage.getItem("name") : sessionStorage.getItem("name");
+            var $nolog = $("#no-login"),$yeslog = $("#yes-login"),$out = $("#out");
+            if(username){
+                $("#name").html(username);
+                $nolog.css({display:"none"});
+                $yeslog.css({display:"block"});
+                $out.on("click",function(){
+                    localStorage.removeItem("name");
+                    sessionStorage.removeItem("name");
+                    location.reload();
+                })
+            }
+        }
+            
+            
 
     }
 });

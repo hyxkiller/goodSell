@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>注册</title>
 		<link rel="stylesheet" href="../css/common.css">
 	</head>
 	<body>
@@ -21,11 +21,82 @@
 			</div>
 		</div>
 		<div class="register-content">
-			<div class="content-middle">
-				<div class="content-bg">
-					
+			<div class="content-middle clear">
+				<div class="content-bg fl">
+					<img src="../images/bg-tree.png" />
+				</div>
+				<div class="content-list fr">
+					<div class="content-phone">
+						<label class="label-phone"></label>
+						<input pattern="phone" name="checkipt" type="text" id="phone" placeholder="请输入常用手机号" >
+						<div class="content-tip">
+							<img src="../images/register/error.png" alt="">
+							<span class="ml5">请输入正确的手机号码</span>
+						</div>
+					</div>
+					<div class="content-pwd">
+						<label class="label-pwd"></label>
+						<input pattern="password" name="checkipt" type="password" id="pwd" placeholder="请输入6-12位密码" >
+						<div class="content-tip">
+							<img src="../images/register/error.png" alt="">
+							<span class="ml5">请输入6-12位账户密码</span>
+						</div>
+					</div>
+					<div class="content-code">
+						<label class="label-code"></label>
+						<input pattern="yzm" name="checkipt" type="text" id="code" placeholder="请输入验证码" class="code-ipt" >		
+						<label class="auto-code" id="autocode">1111</label>	
+						<a href="javascript:void(0)" class="next-code fr" id="code4">看不清换一张</a>	
+						<div class="content-tip">
+							<img src="../images/register/error.png" alt="">
+							<span class="ml5">请输入正确的验证码</span>
+						</div>		
+					</div>
+					<div class="content-phonecode">
+							<label class="label-phonecode"></label>	
+							<input type="text" id="phonecode" placeholder="请输入手机验证码" class="phonecode-ipt">	
+							<a href="javascipt:void(0)" class="gain fr">点击获取</a>	
+							<div class="content-tip">
+								<img src="../images/register/error.png" alt="">
+								<span class="ml5">请输入手机验证码</span>
+							</div>				
+					</div>
+					<div class="content-item">
+						<div class="cklabel">
+							<input type="checkbox"  checked="checked" name="" id="" class="gouxuan">我已阅读并同意
+							<span class="c-green">《贵农网用户注册协议》</span>
+						</div>
+					</div>
+					<div class="free-register">
+						<button class="regist" id="regist">免费注册</button>
+					</div>
+				</div>
+				<div class="content-text fr">
+					贵农网将采取合理技术手段保护客户信息，防止外泄！
 				</div>
 			</div>
 		</div>
+		<div id="foot">
+			<div class="foots">
+				<a href="javascipt:void">关于我们</a>|
+				<a href="javascipt:void">联系我们</a>	
+				<div class="mtb10">
+					<p>Copyright2015 黔ICP备12003464号 - 2</p>
+					<p>© 版权所有 © 2015 贵农网 保留所有权利　技术支持：贵州贵农网络科技有限公司-研发中心</p>	
+				</div>		
+			</div>
+			<div class="authentication2">
+				<a  href='https://credit.szfw.org/CX20160315018078080410.html' target='_blank'>
+					<img src="../images/footicon1.png" />
+				</a>
+				<a href="http://www.anquan.org/authenticate/cert/?site=www.coopbuy.com&at=business" target="_blank">
+					<img src="../images/footicon2.png" />
+				</a>
+				<a href="http://webscan.360.cn/index/checkwebsite/url/www.coopbuy.com" target="_blank">
+					<img src="../images/footicon3.png"  />
+				</a>
+			</div>
+		</div>
 	</body>
+	<script data-main="../js/my-pluin/regist.js" src="../js/require.js"></script>
 </html>

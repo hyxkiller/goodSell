@@ -2,8 +2,47 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>列表</title>
+		<link rel="stylesheet" href="../css/common.css">
+		<link rel="stylesheet" href="../css/goodslist.css">
 	</head>
+	<script type="text/html" id="mylist">
+        <div class="floor1">
+			<% for(var i=0;i<data.goodslist.length;i++){ %>
+				<h3><%= data.goodslist[i].title %> </h3>
+				<ul class="clear">
+					<% for(var j=0;j<data.goodslist[i].content.length;j++){ %>
+						<li>
+							<div class="p-img">
+								<a href="details.html" target="_blank">
+									<img src= <%= data.goodslist[i].content[j].imgs %> alt="">
+								</a>
+							</div>
+							<div class="p-name">
+								<a href="details.html" target="_blank"> <%= data.goodslist[i].content[j].name %> </a>
+							</div>
+							<div class="p-price">
+								<span><%= data.goodslist[i].content[j].span %></span>
+								<del><%= data.goodslist[i].content[j].del %></del>
+							</div>
+							<a href="details.html" class="btn-buy">立即抢购</a>
+						</li>
+					<% } %>
+				</ul>
+			<% } %>
+		</div>
+    </script>
 	<body>
+		<div id="top"></div>
+		<div id="rightside"></div>
+		<div class="hot-content">
+			<img src="../images/banner.jpg" alt="">
+		</div>
+		<div class="content">
+			<div class="lists clear">
+			</div>
+		</div>
+		<div id="foot"></div>
 	</body>
+	<script data-main="../js/my-pluin/goodslist.js" src="../js/require.js"></script>
 </html>
