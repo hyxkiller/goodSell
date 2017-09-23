@@ -4,7 +4,6 @@ require(["../config"],function(){
             $(".search-bar").hide();
             $(".nav-bar").hide();
             head();
-            ipt();
             hasgoods();
         })
         
@@ -18,38 +17,66 @@ require(["../config"],function(){
             }
         }
         function storage(){
-            for(var i=0;i<localStorage.length;i++){
-                var key = localStorage.key(i)
-                var content =  JSON.parse(localStorage.getItem(key))
-                var item = $(".cart-item").clone().prependTo(".cart-items");
-                $(".goodsimg img").attr("src",content.img.substring(1,46));
-                $(".p1").text(content.tittle);
-                $(".p2").text("颜色："+content.color);
-                $(".price").text(content.price);
-                $(".number").val(content.count);
-                $(".cart-item").eq(0).remove();
+            var html = "";
+            for(var i in localStorage){
+                var local = localStorage[i];
+                // console.log(localStorage.getItem())
+                var content = JSON.parse(local)
+                var item = `<div class="cart-item">
+                <ul class="clear">
+                    <li class="it1">
+                        <input type="checkbox" name="" class="inp">
+                    </li>
+                    <li class="it2 clear">
+                        <div class="goodsimg fl">
+                            <a href="javascipt:void(0)">
+                                <img src="../${content.img.substring(23,46)}" alt="">
+                            </a>
+                        </div>
+                        <div class="goodscon fl">
+                            <a href="javascript:void(0)">
+                                <p class="p1">${content.tittle}</p>
+                                <p class="p2">颜色：${content.color}</p>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="it3">¥
+                        <span class="price">${content.price}</span>  
+                    </li>
+                    <li class="it4">
+                        <a  class="reduce">-</a>
+                        <input type="text" value="${content.count}" class="number">
+                        <a  class="add">+</a>                            
+                    </li>
+                    <div class="it5 del"><p style=" display:none ">${content.id}</p>删除</div>
+                </ul>
+            </div>`;
+                html += item;              
             }
-            count();            
+            document.getElementsByClassName("cart-items")[0].innerHTML = html;
+            count();   
+            ipt();            
         }
 
         function count(){
             var $reduce = $(".reduce"),$add = $(".add"),$ipt = $(".number");
             var $price = $(".price"),$total = $(".buyspan"),$delete = $(".del");
             var $cartitem = $(".cart-item"),$message = $(".message"),$cartlist = $(".cart-list");
-            // for(var i=0;i<$delete.length;i++){
-            //     $total.text( +$total.text() + $price.eq(i).text()*$ipt.eq(i).val() )
-            // }
-            $total.text( parseInt( ($price.text() * $ipt.val() )*100)/100 );
-            $reduce.on("click",function(){
-                if($ipt.val()>1){
-                    $ipt.val($ipt.val()-1)
-                    $total.text( parseInt( ($price.text() * $ipt.val() )*100)/100 );
-                    // var q = $(this).index();
-                    // $ipt.eq(q).val( +$ipt.eq(q).val()+1  );
-                    // for(var j=0;j<$delete.length;j++){
-                    //     // $ipt.eq(j).val( $ipt.eq(j).val()-1 );
-                    //     $total.text( $total.text() - $price.eq(j).text()*$ipt.eq(j).val() )
-                    // }
+            var nu = 0;
+            for(var i=0;i<$delete.length;i++){
+                var num =  parseFloat($price.eq(i).text())* ($ipt.eq(i).val());
+                nu += num;
+            }
+            $total.text(nu.toFixed(2));
+            $reduce.on("click",function(){  
+                if($(this).next().val()>1){
+                    $(this).next().val( +$(this).next().val()-1);
+                    var nu = 0;
+                    for(var i=0;i<$delete.length;i++){
+                        var num =  parseFloat($price.eq(i).text())* parseFloat($ipt.eq(i).val());
+                        nu += num;
+                    }
+                    $total.text(nu.toFixed(2));
                 }else{
                     $reduce.css({cursor:"not-allowed"})
                 }
@@ -61,29 +88,34 @@ require(["../config"],function(){
                     $reduce.css({cursor:"not-allowed"})                                        
                 }
             })
+            $add.on("mouseenter",function(){
+                $add.css({cursor:"pointer"})
+            })
             $add.on("click",function(){
-                $ipt.val(+$ipt.val()+1);
-                $total.text( parseInt( ($price.text() * $ipt.val() )*100)/100 );
-                // var m = $(this).index();
-                // console.log(m)
-                // $ipt.eq(m).val( +$ipt.eq(m).val()+1  );
-                // for(var k=0;k<$delete.length;k++){
-                //     $total.text( +$total.text() + $price.eq(k).text()*$ipt.eq(k).val() )
-                // }
+                $(this).prev().val( +$(this).prev().val()+1);
+                var nu = 0;
+                for(var i=0;i<$delete.length;i++){
+                    var num =  parseFloat($price.eq(i).text())* parseFloat($ipt.eq(i).val());
+                    nu += num;
+                }
+                $total.text(nu.toFixed(2)); 
             })
             $ipt.on("keyup",function(){
+                var nu = 0;
                 for(var i=0;i<$delete.length;i++){
-                    $total.text("");
-                    $total.text( +$total.text() + $price.eq(i).text()*$ipt.eq(i).val() )
+                    var num =  parseFloat($price.eq(i).text())* parseFloat($ipt.eq(i).val());
+                    nu += num;
                 }
+                $total.text(nu.toFixed(2));
             })
             $delete.on("click",function(){
-                var index = $(this).index();
-                $cartitem.eq(index).hide();
-                if($cartitem.length == 1){
+                $(this).parent().parent().remove();
+                var mz = parseInt($(this).find("p").text());
+                localStorage.removeItem("bat"+mz);
+                $cartitem.length -= 1;
+                if($cartitem.length == 0){
                     $message.show();
-                    $cartlist.remove();
-                    localStorage.removeItem("bat1");
+                    $cartlist.hide();
                 }
             })
             

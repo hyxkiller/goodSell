@@ -8,19 +8,28 @@ require(["../config"],function(){
             $(".categorys").on("mouseout",function(){
                 $(".category").css({display:"none"});
             })
-            bigImg();
-            changeImg();
-            items();
-            count();
-            similar();
-            scroll();
-            cart();
+            
             $.ajax({
                 type : "get",
-                url  : "../js/my-pluin/dl.json",
+                url  : "../js/my-pluin/gl.json",
                 success : function(data){
-                    var delist = document.getElementsByClassName("left-list")[0];
-                    delist.innerHTML = tem("delist",data);
+                    console.log(data.goodslist[0].content)
+                    var sl = location.href.indexOf("id");
+                    var sr = location.href.slice(sl+3);
+                    for(var i=0;i<data.goodslist[0].content.length;i++){
+                        if( sr == data.goodslist[0].content[i].id ){
+                            var oDiv = document.getElementsByClassName("details-content")[0];
+                            console.log(data.goodslist[0].content[i])
+                            oDiv.innerHTML = tem("biglist",data.goodslist[0].content[i]);
+                            bigImg();
+                            changeImg();
+                            items();
+                            count();
+                            similar();
+                            scroll();
+                            cart();
+                        }
+                    }
                 }
             })
         });
@@ -93,6 +102,8 @@ require(["../config"],function(){
             var $smallImg = $("#smallImg"),$smallCursor = $("#smallCursor"),$bigCursor = $("#bigCursor"), $bigImg = $("#bigImg");
             $smallCursor.width($smallImg.outerWidth()*$bigCursor.outerWidth()/$bigImg.outerWidth() );
             $smallCursor.height($smallCursor.width());
+            var big = $bigImg.attr("src");
+            $smallImg.css("backgroundImage","url("+ big +")")
             var rate = $bigCursor.width()/$smallCursor.width();
             $smallImg.hover(function(){
                 $smallCursor.fadeIn();
@@ -131,54 +142,59 @@ require(["../config"],function(){
                 jump();
             })
         }
+
         function storage(){
-            var id = $(".hide").text();
+            var id = $(".hide").text().trim();
             var count = $(".btn-count").val();
             var $number = $(".side-cart em");
-            $number.text( +$number.text() + parseInt(count) );
+            $number.text(parseInt(count) );
             var number = $number.text();
             var color = $("#hasselect").text();
-            var price = $(".tpspan").text();
+            var price = $(".tpspan").text().trim();
             var tittle = $(".name").find("h2").text();
             var img = $("#smallImg").css('backgroundImage').substring(4,51);
-            var bat = { "count":number, "color":color,"price":price,"tittle":tittle,"img":img};
+            var bat = {"id": id, "count":count, "color":color,"price":price,"tittle":tittle,"img":img};
             var batString = JSON.stringify(bat);
             window.localStorage.setItem("bat"+id,batString);            
         }
+
         function jump(){
             var $chooseapp = $(".choose-append"), $sidecart = $(".side-cart i"),s = document.getElementsByClassName("side-cart")[0].children[0];
             var start = {x:$chooseapp.offset().left,y:$chooseapp.offset().top};
             var target = {x:$sidecart.offset().left,y:$sidecart.offset().top};
             var x = target.x - start.x;
             var y = target.y - start.y;
-            var img = $("#smallImg").css('backgroundImage').substring(4,51).substring(1,46);
-            var $goods = $("<img>").appendTo($chooseapp);
-            $goods.css({width:60,height:60,position:"absolute",top:-5,left:60,zIndex:1000})
-            $goods.attr("src",img);
-            $goods.animate({left:x+40,top:y,width:0,height:0},800);
-            // var img = document.createElement("img");
-            // img.style.position = "absolute";
-            // img.style.top = -5+"px";
-            // img.style.left = 60+"px";
-            // img.style.width = 60+"px";
-            // img.style.height = 60+"px"; 
-            // img.src =  $("#smallImg").css('backgroundImage').substring(4,51).substring(1,46);                      
-            // document.getElementsByClassName("choose-append")[0].appendChild(img);
-            // console.log(img)
-            // var a = -0.0001;
-            // var b = (y - a*x*x)/x;
-            // console.log(b)
-            // var coordX = 0;
-            // var speedx = 5;
-            // var speedy = 10;
-            // setInterval(function(){
-            //     img.style.left = parseInt(img.style.left) + speedx + coordX+"px";
-            //     img.style.top = parseInt(img.style.top) + speedy + a*coordX*coordX + b*coordX+"px";
-            //     img.style.width = (parseInt(img.style.width)-3)+"px";
-            //     img.style.height = (parseInt(img.style.height)-3)+"px";                
-            //     coordX += 5;
-            //     speedy -= 2;
-            // },50)
+            // var img = $("#smallImg").css('backgroundImage').substring(4,51).substring(1,46);
+            // var $goods = $("<img>").appendTo($chooseapp);
+            // $goods.css({width:60,height:60,position:"absolute",top:-5,left:60,zIndex:1000})
+            // $goods.attr("src",img);
+            // $goods.animate({left:x+40,top:y,width:0,height:0},800);
+
+            var img = document.createElement("img");
+            img.style.position = "absolute";
+            img.style.top = -5+"px";
+            img.style.left = 60+"px";
+            img.style.width = 60+"px";
+            img.style.height = 60+"px"; 
+            img.src =  $("#smallImg").css('backgroundImage').substring(4,51).substring(1,46);                                  
+            document.getElementsByClassName("choose-append")[0].appendChild(img);
+            var a = -0.0001;
+            var b = (y - a*x*x)/x;
+            var coordX = 0;
+            var speedx = 5;
+            var speedy = -20;
+            var timer = setInterval(function(){
+                img.style.left = parseInt(img.style.left) + speedx + coordX+"px";
+                img.style.top = parseInt(img.style.top) + speedy + a*coordX*coordX + b*coordX+"px";
+                img.style.width = (parseInt(img.style.width)-3)+"px";
+                img.style.height = (parseInt(img.style.height)-3)+"px";                
+                coordX += 5;
+                speedy += 2;
+                if(parseInt(img.style.width) == 0){
+                    clearInterval(timer);
+                    img.remove();
+                }
+            },50)
         }
     })
 })

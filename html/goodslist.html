@@ -14,7 +14,7 @@
 					<% for(var j=0;j<data.goodslist[i].content.length;j++){ %>
 						<li>
 							<div class="p-img">
-								<a href="details.html" target="_blank">
+								<a href= <%= "details.html?id="+ data.goodslist[i].content[j].id %> target="_blank">
 									<img src= <%= data.goodslist[i].content[j].imgs %> alt="">
 								</a>
 							</div>
@@ -22,10 +22,10 @@
 								<a href="details.html" target="_blank"> <%= data.goodslist[i].content[j].name %> </a>
 							</div>
 							<div class="p-price">
-								<span><%= data.goodslist[i].content[j].span %></span>
-								<del><%= data.goodslist[i].content[j].del %></del>
+								<span>￥<%= data.goodslist[i].content[j].span %></span>
+								<del>￥<%= data.goodslist[i].content[j].del %></del>
 							</div>
-							<a href="details.html" class="btn-buy">立即抢购</a>
+							<a href=<%= "details.html?id="+ data.goodslist[i].content[j].id %> class="btn-buy">立即抢购</a>
 						</li>
 					<% } %>
 				</ul>

@@ -1,27 +1,27 @@
 {
     "detailslist" : [
         {
-            "imgs"  : "http://localhost:8080/images/goodslist/gl1.jpg",
+            "imgs"  : "http://localhost:8080/images/goodslist/g1.jpg",
             "name"  : "（爆品池）新款夏季韩版时尚印花T恤中长款网纱裙两件套连衣裙",
             "price"  : "￥79.00"
         },
         {
-            "imgs"  : "http://localhost:8080/images/goodslist/gl2.jpg",
+            "imgs"  : "http://localhost:8080/images/goodslist/g2.jpg",
             "name"  : "（爆品池）夏季户外帽子男大沿防晒帽遮阳帽男防紫外线钓鱼帽渔夫帽男太阳帽",
             "price"  : "￥38.00"
         },
         {
-            "imgs"  : "http://localhost:8080/images/goodslist/gl3.jpg",
+            "imgs"  : "http://localhost:8080/images/goodslist/g3.jpg",
             "name"  : "（爆品池）帽子男夏天棒球帽韩版嘻哈帽青年百搭时尚春天休闲太阳户外遮阳帽",
             "price"  : "￥18.00"
         },
         {
-            "imgs"  : "http://localhost:8080/images/goodslist/gl4.jpg",
+            "imgs"  : "http://localhost:8080/images/goodslist/g4.jpg",
             "name"  : "（爆品池）防晒帽子女夏天骑车护脸遮阳帽电动车太阳帽电瓶车户外遮脸可折叠",
             "price"  : "￥9.90"
         },
         {
-            "imgs"  : "http://localhost:8080/images/goodslist/gl5.jpg",
+            "imgs"  : "http://localhost:8080/images/goodslist/g5.jpg",
             "name"  : "（爆品池）2017春季新款真丝围巾夏季防晒两用披肩桑蚕丝巾女士百搭沙滩纱巾",
             "price"  : "￥79.90"
         }
